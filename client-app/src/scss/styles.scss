@@ -1,2 +1,12 @@
-@import "./abstracts/colors";
+//colors variables
+$color-grey: #707070;
+$color-grey-light: #b7b7b7;
+$color-grey-lightest: #dcdee1;
+
+//breakpoint variables
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-screens: 1024px;
+
+@import "./container";
 @import "./profile";

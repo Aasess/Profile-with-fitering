@@ -1,0 +1,10 @@
+.container {
+  margin-inline: 30px;
+}
+
+//screen that is less than mobile width
+@media screen and (max-width: $breakpoint-mobile) {
+  .container {
+    margin-inline: 10px;
+  }
+}

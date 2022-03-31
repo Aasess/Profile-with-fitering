@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.paths.json",
+  // "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -15,7 +15,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    //paths setup
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["./*"],
+      "scenes/*": ["./scenes/*"],
+      "ts/*": ["./ts/*"],
+      "scss/*": ["./scss/*"],
+      "store/*": ["./store/*"],
+      "network/*": ["./network/*"]
+    }
   },
   "include": ["src"]
 }
