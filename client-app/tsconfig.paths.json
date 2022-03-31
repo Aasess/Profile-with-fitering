@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["./*"],
+      "scenes/*": ["./scenes/*"],
+      "ts/*": ["./ts/*"],
+      "scss/*": ["./scss/*"],
+      "store/*": ["./store/*"],
+      "network/*": ["./network/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
