@@ -8,11 +8,11 @@ import Profile from "scenes/profile";
 
 //REUDX
 import { Provider } from "react-redux";
-import configureStore from "store/configureStore";
+import { store } from "store/configureStore";
 
 function App() {
   return (
-    <Provider store={configureStore({})}>
+    <Provider store={store}>
       <div className="container">
         <Profile />
       </div>
