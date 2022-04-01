@@ -35,9 +35,9 @@ const Profile: FC = () => {
   ];
 
   const signalOptions = [
-    { label: "Solid", value: "Solid" },
-    { label: "Good", value: "Good" },
-    { label: "Ok", value: "Ok" },
+    { label: "Solid", value: "0" },
+    { label: "Good", value: "1" },
+    { label: "Ok", value: "2" },
   ];
 
   const sourceOptions = [
