@@ -76,6 +76,29 @@ const Profile: FC = () => {
     // const result = values.map((value: any) => value.value);
     newState["source"] = values;
     setState(newState);
+    filterReport("source", values);
+  };
+
+  const filterReport = (name: string, values: any) => {
+    if (name === "source") {
+      var filteredData: any = [];
+      profile.forEach((profile: any) => {
+        var tempData: any = [];
+        profile.photos.forEach((image: any) => {
+          values.forEach((value: any) => {
+            if (value?.label?.toLowerCase() === image.source?.toLowerCase()) {
+              tempData.push(image);
+            }
+          });
+        });
+        if (tempData.length !== 0) {
+          filteredData.push({ ...profile, photos: tempData });
+        }
+      });
+      if (filteredData.length === 0) {
+        setProfileData(profile);
+      } else setProfileData(filteredData);
+    }
   };
 
   useEffect(() => {
@@ -88,6 +111,7 @@ const Profile: FC = () => {
   useEffect(() => {
     setProfileData(profile);
   }, [profile]);
+
   return (
     <>
       <div className="loader">
