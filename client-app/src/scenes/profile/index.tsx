@@ -26,11 +26,11 @@ const Profile: FC = () => {
   ];
 
   const sourceOptions = [
-    { label: "google", value: 0 },
-    { label: "linkedin", value: 1 },
-    { label: "facebook", value: 2 },
-    { label: "twitter", value: 3 },
-    { label: "office365", value: 4 },
+    { label: "Google", value: 0 },
+    { label: "Linkedin", value: 1 },
+    { label: "Facebook", value: 2 },
+    { label: "Twitter", value: 3 },
+    { label: "Office365", value: 4 },
   ];
 
   const { profile } = useSelector(
