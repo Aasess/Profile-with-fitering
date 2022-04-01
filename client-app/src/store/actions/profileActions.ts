@@ -8,7 +8,7 @@ export const fetchProfileData = (name: string) => {
     if (res) {
       dispatch({
         type: GET_PROFILE,
-        payload: res,
+        payload: res.data,
       });
     }
   };

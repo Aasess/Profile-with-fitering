@@ -1,12 +1,5 @@
-interface IPhotos {
-  source: string;
-  url: string;
-}
+import { IProfileReducer } from "./reducer";
 
-export interface IProfileState {
-  firstName: string;
-  lastName: string;
-  photos: IPhotos[];
-  signal: number;
-  status: string;
+export interface rootStateProps {
+  profileReducer: IProfileReducer;
 }

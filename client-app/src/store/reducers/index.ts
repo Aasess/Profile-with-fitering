@@ -6,10 +6,7 @@ import { loadingBarReducer } from "react-redux-loading-bar";
 //REDUCER
 import { profileReducer } from "./profileReducer";
 
-//INTERFACE
-import { IProfileState } from "ts/interfaces/store";
-
-export const rootReducer = combineReducers<IProfileState | any>({
+export const rootReducer = combineReducers({
   loadingBar: loadingBarReducer,
   profileReducer,
 });
