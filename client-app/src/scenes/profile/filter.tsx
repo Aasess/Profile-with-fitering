@@ -17,7 +17,6 @@ const Filter = (props: any) => {
   const { statusOptions, signalOptions, sourceOptions } = props;
 
   const handleChange = (e: any) => {
-    console.log(e.target.name, e.target.value);
     let newState = { ...state };
     //signal is a checkbox that contains multiple value
     if (e.target.name === "signal") {

@@ -2,7 +2,6 @@ import React from "react";
 
 const InputCheckBox = (props: any) => {
   const { handleChange, options, values, name } = props;
-  console.log(values);
   return (
     <div className="options-checkbox">
       <p className="text-bold">By Signal</p>

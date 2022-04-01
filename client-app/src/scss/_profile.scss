@@ -46,6 +46,12 @@
       justify-content: space-between;
     }
   }
+  &-card {
+    min-width: 180px;
+    background-color: $color-grey-lightest;
+    border: 1px solid $color-grey;
+    border-radius: 10px;
+  }
 }
 
 .select {

@@ -49,7 +49,7 @@ const Profile: FC = () => {
         signalOptions={signalOptions}
         sourceOptions={sourceOptions}
       />
-      <ProfileDetail />
+      <ProfileDetail data={profile} />
     </div>
   );
 };
