@@ -6,7 +6,7 @@ import { IProfileReducer } from "ts/interfaces/reducer";
 import { IProfileAction } from "ts/interfaces/action";
 
 const initialState: IProfileReducer = {
-  profile: [],
+  profiles: [],
 };
 
 export const profileReducer = (
@@ -15,7 +15,7 @@ export const profileReducer = (
 ) => {
   switch (action.type) {
     case GET_PROFILE:
-      return { ...state, profile: action.payload };
+      return { ...state, profiles: action.payload };
     default:
       return state;
   }

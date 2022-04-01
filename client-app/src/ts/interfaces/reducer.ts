@@ -12,5 +12,5 @@ export interface IProfileState {
 }
 
 export interface IProfileReducer {
-  profile: IProfileState[];
+  profiles: IProfileState[];
 }
