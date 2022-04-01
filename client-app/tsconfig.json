@@ -25,7 +25,8 @@
       "ts/*": ["./ts/*"],
       "scss/*": ["./scss/*"],
       "store/*": ["./store/*"],
-      "network/*": ["./network/*"]
+      "network/*": ["./network/*"],
+      "components/*": ["./components/*"]
     }
   },
   "include": ["src"]

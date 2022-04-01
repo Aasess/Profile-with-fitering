@@ -1,3 +1,53 @@
 .profile {
-  color: $color-grey;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  &-filter {
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 20%;
+    background-color: $color-grey-lightest;
+    border: 1px solid $color-grey;
+    .text-bold {
+      font-weight: 500;
+    }
+    .searchbar {
+      position: relative;
+      display: flex;
+      width: 100%;
+      &-icon {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 20px;
+      }
+      .search {
+        border: 1px solid $color-grey;
+        border-radius: 10px;
+        height: 30px;
+        width: 100%;
+        padding: 2px 23px 2px 30px;
+        outline: 0;
+        background-color: #fff;
+
+        &:focus {
+          border: 1px solid $color-input-focus;
+          outline: 1px solid $color-input-focus;
+        }
+      }
+    }
+
+    &-options {
+      display: flex;
+      flex-direction: row;
+      width: 60%;
+      justify-content: space-between;
+    }
+  }
+}
+
+.select {
+  span + div {
+    border-radius: 10px;
+  }
 }
