@@ -10,13 +10,14 @@ import InputCheckBox from "components/inputCheckBox";
 const Filter = (props: any) => {
   const [state, setState] = useState<any>({
     search: "",
-    status: "",
+    status: "2",
     signal: [], //since signal contains multiple values
     source: [],
   });
   const { statusOptions, signalOptions, sourceOptions } = props;
 
   const handleChange = (e: any) => {
+    console.log(e.target.name, e.target.value);
     let newState = { ...state };
     //signal is a checkbox that contains multiple value
     if (e.target.name === "signal") {
@@ -46,6 +47,9 @@ const Filter = (props: any) => {
     setState(newState);
   };
 
+  // React.useEffect(() => {
+  //   console.log(state);
+  // }, [state]);
   return (
     <div className="profile-filter">
       <p className="text-bold">Filter</p>
@@ -69,14 +73,14 @@ const Filter = (props: any) => {
           handleChange={handleChange}
           options={statusOptions}
           name="status"
-          values={state.status}
+          value={state.status}
         />
 
         <InputCheckBox
           handleChange={handleChange}
           options={signalOptions}
           name="signal"
-          value={state.signal}
+          values={state.signal}
         />
       </div>
 

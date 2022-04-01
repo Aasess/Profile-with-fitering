@@ -15,14 +15,15 @@ const Profile: FC = () => {
   const dispatch: Function = useDispatch();
 
   const statusOptions = [
-    { label: "Active", value: "Active" },
-    { label: "Inactive", value: "Inactive" },
+    { label: "Active", value: "0" },
+    { label: "Inactive", value: "1" },
+    { label: "All", value: "2" },
   ];
 
   const signalOptions = [
-    { label: "Solid", value: "Solid" },
-    { label: "Good", value: "Good" },
-    { label: "Ok", value: "Ok" },
+    { label: "Solid", value: "0" },
+    { label: "Good", value: "1" },
+    { label: "Ok", value: "2" },
   ];
 
   const sourceOptions = [
