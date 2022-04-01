@@ -11,7 +11,7 @@ const Filter = (props: any) => {
   const [state, setState] = useState<any>({
     search: "",
     status: "",
-    signal: [],
+    signal: [], //since signal contains multiple values
     source: [],
   });
   const { statusOptions, signalOptions, sourceOptions } = props;
@@ -44,7 +44,6 @@ const Filter = (props: any) => {
     let newState = { ...state };
     // const result = values.map((value: any) => value.value);
     newState["source"] = values;
-
     setState(newState);
   };
 
@@ -60,7 +59,9 @@ const Filter = (props: any) => {
           type="search"
           autoComplete="off"
           placeholder="Search"
+          name="search"
           className="search"
+          value={state.search}
           onChange={handleChange}
         />
       </div>

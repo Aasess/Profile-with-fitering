@@ -38,6 +38,7 @@ const Profile: FC = () => {
   );
 
   useEffect(() => {
+    //on load call the get api
     dispatch(fetchProfileData("users.json"));
   }, [dispatch]);
 

@@ -35,16 +35,3 @@ const InputCheckBox = (props: any) => {
 };
 
 export default InputCheckBox;
-
-{
-  /* <p className="text-bold">By Signal</p>
-<div onChange={handleChange}>
-  <div>
-    <input type="checkbox" value="Male" name="gender" /> Active
-  </div>
-  <div>
-    <input type="checkbox" value="Female" name="gender" /> Inactive
-  </div>
-</div>
-</div> */
-}
