@@ -47,18 +47,18 @@ const Filter = (props: any) => {
     setState(newState);
   };
 
-  React.useEffect(() => {
-    console.log(state);
-  }, [state]);
   return (
     <div className="profile-filter">
       <p className="text-bold">Filter</p>
       <div className="searchbar">
-        <BiSearch className="searchbar-icon" />
+        <label htmlFor="search">
+          <BiSearch className="searchbar-icon" />
+        </label>
         <input
           type="search"
           autoComplete="off"
-          placeholder="Search"
+          placeholder="Search..."
+          id="search"
           name="search"
           className="search"
           value={state.search}

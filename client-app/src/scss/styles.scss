@@ -4,13 +4,16 @@ $color-grey-light: #b7b7b7;
 $color-grey-lighter: #dcdee1;
 $color-grey-lightest: #fafafa;
 $color-input-focus: rgb(38, 132, 255);
+
 //breakpoint variables
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-screens: 1024px;
 
+//google fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
+//scss file
 @import "./container";
 @import "./profile";
