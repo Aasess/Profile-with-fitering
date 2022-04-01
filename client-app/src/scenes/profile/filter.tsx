@@ -8,43 +8,14 @@ import InputRadio from "components/inputRadio";
 import InputCheckBox from "components/inputCheckBox";
 
 const Filter = (props: any) => {
-  const [state, setState] = useState<any>({
-    search: "",
-    status: "",
-    signal: [], //since signal contains multiple values
-    source: [],
-  });
-  const { statusOptions, signalOptions, sourceOptions } = props;
-
-  const handleChange = (e: any) => {
-    let newState = { ...state };
-    //signal is a checkbox that contains multiple value
-    if (e.target.name === "signal") {
-      //if already checked then on click remove from the state
-      if (newState[e.target.name].indexOf(e.target.value) >= 0) {
-        let result = newState[e.target.name].filter(
-          (signal: any) => signal != e.target.value
-        );
-        newState[e.target.name] = result;
-      } else {
-        //append the result
-        newState[e.target.name] = [...newState[e.target.name], e.target.value];
-      }
-    }
-    //if it is status then replace the value
-    else {
-      newState[e.target.name] = e.target.value;
-    }
-
-    setState(newState);
-  };
-
-  const handleChangeSelect = (values: any) => {
-    let newState = { ...state };
-    // const result = values.map((value: any) => value.value);
-    newState["source"] = values;
-    setState(newState);
-  };
+  const {
+    statusOptions,
+    signalOptions,
+    sourceOptions,
+    state,
+    handleChange,
+    handleChangeSelect,
+  } = props;
 
   return (
     <div className="profile-filter">
@@ -69,14 +40,14 @@ const Filter = (props: any) => {
           handleChange={handleChange}
           options={statusOptions}
           name="status"
-          values={state.status}
+          value={state.status}
         />
 
         <InputCheckBox
           handleChange={handleChange}
           options={signalOptions}
           name="signal"
-          value={state.signal}
+          values={state.signal}
         />
       </div>
 
