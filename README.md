@@ -13,4 +13,4 @@
 <pre>npm i</pre>
 
 3. Run the Application
-4. <pre>npm start</pre>
+<pre>npm start</pre>
