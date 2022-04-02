@@ -4,7 +4,7 @@ import React, { FC, useState, useEffect } from "react";
 import Filter from "./filter";
 import ProfileDetail from "./profileDetail";
 import BeatLoader from "react-spinners/BeatLoader";
-
+import NoDataFound from "components/noDataFound";
 //REUDX
 import { fetchProfileData } from "store/actions/profileActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -112,7 +112,11 @@ const Profile: FC = () => {
           handleChange={handleChange}
           handleChangeSelect={handleChangeSelect}
         />
-        <ProfileDetail data={profileData} />
+        {profileData.length === 0 ? (
+          <NoDataFound />
+        ) : (
+          <ProfileDetail data={profileData} />
+        )}
       </div>
     </>
   );

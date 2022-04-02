@@ -1,0 +1,11 @@
+.data-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &-image {
+    width: 100px;
+    height: 70px;
+  }
+}
