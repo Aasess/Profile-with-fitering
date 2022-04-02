@@ -27,7 +27,8 @@
       "store/*": ["./store/*"],
       "network/*": ["./network/*"],
       "components/*": ["./components/*"],
-      "enum/*": ["./enum/*"]
+      "enum/*": ["./enum/*"],
+      "helpers/*": ["./helpers/*"]
     }
   },
   "include": ["src"]
