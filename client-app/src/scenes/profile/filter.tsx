@@ -1,13 +1,19 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
 //ICONS
 import { BiSearch } from "react-icons/bi";
 
+//LIBRARY
 import Select from "react-select";
+
+//COMPONENTS
 import InputRadio from "components/inputRadio";
 import InputCheckBox from "components/inputCheckBox";
 
-const Filter = (props: any) => {
+//INTERFACE
+import { IFilterProps } from "ts";
+
+const Filter: FC<IFilterProps> = (props: IFilterProps) => {
   const {
     statusOptions,
     signalOptions,
@@ -54,12 +60,12 @@ const Filter = (props: any) => {
       <div className="profile-filter-select">
         <p className="text-bold">By Source</p>
         <Select
-          options={sourceOptions}
+          options={sourceOptions as any}
           isMulti
           isClearable
           className="select"
           value={state.source}
-          onChange={(value) => handleChangeSelect(value)}
+          onChange={(value: any) => handleChangeSelect(value)}
         />
       </div>
     </div>

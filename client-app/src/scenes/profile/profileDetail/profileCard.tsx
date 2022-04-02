@@ -5,7 +5,10 @@ import Status from "./status";
 import Signal from "./signal";
 import Source from "./source";
 
-const ProfileCard = (props: any) => {
+//INTERFACES
+import { IProfileCardProps } from "ts";
+
+const ProfileCard: React.FC<IProfileCardProps> = (props: IProfileCardProps) => {
   const { data } = props;
 
   return (

@@ -14,7 +14,7 @@ import { onFilter } from "helpers/filter";
 import { sortObj } from "helpers/sortObj";
 
 //INTERFACE
-import { rootStateProps, ProfileState } from "ts";
+import { rootStateProps, ProfileState, IProfileState } from "ts";
 
 const statusOptions = [
   { label: "Active", value: "Active" },
@@ -46,20 +46,20 @@ const Profile: FC = () => {
     source: [],
   });
 
-  const [profileData, setProfileData] = useState<any>([]);
+  const [profileData, setProfileData] = useState<IProfileState[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { profiles } = useSelector(
     (state: rootStateProps) => state.profileReducer
   );
 
-  const handleChange = (e: any) => {
-    let newState: any = { ...state };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    let newState: ProfileState | any = { ...state };
     //signal is a checkbox that contains multiple value
     if (e.target.name === "signal") {
       //if already checked then on click remove from the state
       if (newState[e.target.name].indexOf(e.target.value) >= 0) {
         let result = newState[e.target.name].filter(
-          (signal: any) => signal != e.target.value
+          (signal: string) => signal != e.target.value
         );
         newState[e.target.name] = result;
       } else {
@@ -75,9 +75,8 @@ const Profile: FC = () => {
     setState(newState);
   };
 
-  const handleChangeSelect = (values: any) => {
-    let newState = { ...state };
-
+  const handleChangeSelect = (values: [] | string[]): void => {
+    let newState: ProfileState | any = { ...state };
     newState["source"] = values;
     setState(newState);
   };
@@ -90,7 +89,7 @@ const Profile: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const sortedProfile = profiles.map((profile: any) => {
+    const sortedProfile = profiles.map((profile: IProfileState) => {
       const sortedarr = profile.photos.sort(sortObj);
       return { ...profile, photos: [...sortedarr] };
     });
@@ -105,7 +104,7 @@ const Profile: FC = () => {
   return (
     <>
       <div className="loader">
-        <BeatLoader color="blue" loading={isLoading} />
+        <BeatLoader color="#005CC8" loading={isLoading} />
       </div>
 
       <div className="profile">

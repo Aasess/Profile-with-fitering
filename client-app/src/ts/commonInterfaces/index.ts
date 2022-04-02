@@ -1,14 +1,14 @@
-export interface statusOptions {
+export interface IStatusOptions {
   label: string;
   value: string;
 }
 
-export interface signalOptions {
+export interface ISignalOptions {
   label: string;
   value: string;
 }
 
-export interface sourceOptions {
+export interface ISourceOptions {
   label: string;
   value: number;
 }

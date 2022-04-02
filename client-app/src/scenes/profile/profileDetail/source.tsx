@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 //HELPER
 import { checkImage } from "helpers/imageValid";
 
-const Source = (props: any) => {
+//INTERFACES
+import { ISourceProps, IPhotos } from "ts";
+
+const Source: React.FC<ISourceProps> = (props: ISourceProps) => {
   const { data } = props;
   const [validSrc, setValidSrc] = React.useState<string>(
     "./assets/defaultImage.png"
@@ -11,7 +14,7 @@ const Source = (props: any) => {
 
   useEffect(() => {
     setValidSrc("./assets/defaultImage.png");
-    data.forEach((source: any) => {
+    data.forEach((source: IPhotos) => {
       checkImage(source.url).then((isValidUrl: any) => {
         isValidUrl && setValidSrc(source.url);
       });

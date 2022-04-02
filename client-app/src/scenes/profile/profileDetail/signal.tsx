@@ -1,11 +1,16 @@
 import React from "react";
+
+//ENUMS
 import {
   SignalBgColorCode,
   SignalTextCode,
   SignalValue,
 } from "enum/signalCodeEnum";
 
-const Signal = (props: any) => {
+//INTERFACES
+import { ISignalProps } from "ts";
+
+const Signal: React.FC<ISignalProps> = (props: ISignalProps) => {
   const { data } = props;
   const signalName = SignalValue[data];
 
