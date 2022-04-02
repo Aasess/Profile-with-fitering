@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 //HELPERS
 import { onFilter } from "helpers/filter";
+import { sortObj } from "helpers/sortObj";
 
 //INTERFACE
 import { rootStateProps } from "ts";
@@ -89,7 +90,12 @@ const Profile: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setProfileData(profiles);
+    const sortedProfile = [...profiles];
+    const test = sortedProfile.map((profile: any) => {
+      const sortedarr = profile.photos.sort(sortObj);
+      return { ...profile, photos: [...sortedarr] };
+    });
+    setProfileData(sortedProfile);
   }, [profiles]);
 
   useEffect(() => {
