@@ -7,6 +7,6 @@ const sourcePriority: any = {
 };
 
 export function sortObj(nextValue: any, currentValue: any) {
-  //if positive result is already sorted else reverse two values
-  return sourcePriority[nextValue.source] - sourcePriority[currentValue.source];
+  //if positive result then swap two result and if negative values is already(i.e priority in descending order)
+  return sourcePriority[currentValue.source] - sourcePriority[nextValue.source];
 }
