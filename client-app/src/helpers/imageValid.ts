@@ -12,12 +12,14 @@
 // };
 
 export const checkImage = (url: string) => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.src = url;
-    img.onload = () => resolve(true);
-    img.onerror = () => {
-      resolve(false);
-    };
-  });
+  return new Promise(
+    (resolve: (value: unknown) => void, reject: (reason?: any) => void) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => resolve(true);
+      img.onerror = () => {
+        resolve(false);
+      };
+    }
+  );
 };

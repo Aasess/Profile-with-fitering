@@ -3,7 +3,7 @@ import React from "react";
 //ICONS
 import { AiOutlineTable } from "react-icons/ai";
 
-const NoDataFound = () => {
+const NoDataFound: React.FC = () => {
   return (
     <div className="data-not-found">
       <AiOutlineTable className="data-not-found-image" />

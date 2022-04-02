@@ -5,3 +5,7 @@ export interface ISignalValue {
 export interface ISignalColorCode {
   [key: string]: string;
 }
+
+export interface ISourcePriority {
+  [key: string]: number;
+}

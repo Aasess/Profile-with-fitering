@@ -1,10 +1,11 @@
 import { SignalValue } from "enum/signalCodeEnum";
+import { ProfileState, IProfileState, IPhotos } from "ts";
 
-export const onFilter = (state: any, profiles: any) => {
-  let filteredSearch: any = [];
-  let filteredStatus: any = [];
-  let filteredSignal: any = [];
-  let filteredSource: any = [];
+export const onFilter = (state: ProfileState, profiles: IProfileState[]) => {
+  let filteredSearch: IProfileState[] = [];
+  let filteredStatus: IProfileState[] = [];
+  let filteredSignal: IProfileState[] = [];
+  let filteredSource: IProfileState[] = [];
 
   //if state has the original value the set the state to API original data
   if (
@@ -15,7 +16,7 @@ export const onFilter = (state: any, profiles: any) => {
   ) {
     return profiles;
   } else {
-    profiles.forEach((profile: any) => {
+    profiles.forEach((profile: IProfileState) => {
       if (
         profile?.firstName
           ?.toLowerCase()
@@ -27,7 +28,7 @@ export const onFilter = (state: any, profiles: any) => {
       }
     });
 
-    filteredSearch.forEach((profile: any) => {
+    filteredSearch.forEach((profile: IProfileState) => {
       if (profile.status.toLowerCase() === state.status.toLowerCase()) {
         filteredStatus.push(profile);
       } else if (state.status === "All") {
@@ -35,7 +36,7 @@ export const onFilter = (state: any, profiles: any) => {
       }
     });
 
-    filteredStatus.forEach((profile: any) => {
+    filteredStatus.forEach((profile: IProfileState) => {
       if (state.signal.length === 3) {
         filteredSignal = filteredStatus;
       } else {
@@ -47,13 +48,13 @@ export const onFilter = (state: any, profiles: any) => {
       }
     });
 
-    filteredSignal.forEach((profile: any) => {
+    filteredSignal.forEach((profile: IProfileState) => {
       if (state.source.length === 0) {
         filteredSource = filteredSignal;
       } else {
-        let tempData: any = [];
+        let tempData: IPhotos[] = [];
 
-        profile.photos?.forEach((image: any) => {
+        profile.photos?.forEach((image: IPhotos) => {
           state.source.forEach((value: any) => {
             if (value?.label?.toLowerCase() === image.source?.toLowerCase()) {
               tempData.push(image);

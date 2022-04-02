@@ -14,21 +14,28 @@ import { onFilter } from "helpers/filter";
 import { sortObj } from "helpers/sortObj";
 
 //INTERFACE
-import { rootStateProps, ProfileState, IProfileState } from "ts";
+import {
+  rootStateProps,
+  ProfileState,
+  IProfileState,
+  IStatusOptions,
+  ISignalOptions,
+  ISourceOptions,
+} from "ts";
 
-const statusOptions = [
+const statusOptions: IStatusOptions[] = [
   { label: "Active", value: "Active" },
   { label: "Inactive", value: "Inactive" },
   { label: "All", value: "All" },
 ];
 
-const signalOptions = [
+const signalOptions: ISignalOptions[] = [
   { label: "Solid", value: "Solid" },
   { label: "Good", value: "Good" },
   { label: "Ok", value: "Ok" },
 ];
 
-const sourceOptions = [
+const sourceOptions: ISourceOptions[] = [
   { label: "Google", value: 0 },
   { label: "Linkedin", value: 1 },
   { label: "Facebook", value: 2 },
@@ -71,7 +78,6 @@ const Profile: FC = () => {
     else {
       newState[e.target.name] = e.target.value;
     }
-
     setState(newState);
   };
 
@@ -89,10 +95,12 @@ const Profile: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const sortedProfile = profiles.map((profile: IProfileState) => {
-      const sortedarr = profile.photos.sort(sortObj);
-      return { ...profile, photos: [...sortedarr] };
-    });
+    const sortedProfile: IProfileState[] = profiles.map(
+      (profile: IProfileState) => {
+        const sortedarr = profile.photos.sort(sortObj);
+        return { ...profile, photos: [...sortedarr] };
+      }
+    );
     setProfileData(sortedProfile);
   }, [profiles]);
 

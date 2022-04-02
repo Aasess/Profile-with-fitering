@@ -1,13 +1,16 @@
 import React from "react";
 
-const InputRadio = (props: any) => {
+//INTERFACES
+import { IInputRadio, IStatusOptions } from "ts";
+
+const InputRadio: React.FC<IInputRadio> = (props: IInputRadio) => {
   const { handleChange, options, value, name } = props;
 
   return (
     <div className="options-radio">
       <p className="text-bold">By Status</p>
       <div>
-        {options.map((option: any, index: number) => {
+        {options.map((option: IStatusOptions, index: number) => {
           return (
             <div key={index} className="input-select">
               <input

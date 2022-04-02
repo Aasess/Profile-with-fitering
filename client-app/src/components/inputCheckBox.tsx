@@ -1,6 +1,8 @@
 import React from "react";
 
-const InputCheckBox = (props: any) => {
+//INTERFACES
+import { IInputCheckBox, ISignalOptions } from "ts";
+const InputCheckBox: React.FC<IInputCheckBox> = (props: IInputCheckBox) => {
   const { handleChange, options, values, name } = props;
 
   return (
@@ -8,7 +10,7 @@ const InputCheckBox = (props: any) => {
       <p className="text-bold">By Signal</p>
 
       <div>
-        {options.map((option: any, index: number) => {
+        {options.map((option: ISignalOptions, index: number) => {
           const checkedData = values.filter((value: any) => {
             return value === option.value;
           });
