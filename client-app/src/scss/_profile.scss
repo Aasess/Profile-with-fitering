@@ -67,3 +67,18 @@
     border-radius: 10px;
   }
 }
+
+//screen that is less than mobile width
+@media screen and (max-width: $breakpoint-mobile) {
+  .profile {
+    flex-wrap: wrap;
+    &-detail {
+      margin-top: 20px;
+      margin-left: 0px;
+    }
+    &-card {
+      width: 100%;
+      margin-left: 0px !important;
+    }
+  }
+}
