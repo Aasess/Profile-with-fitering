@@ -3,6 +3,11 @@
   position: relative;
   overflow: hidden;
   margin: 20px;
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.07);
+  }
   &-status {
     position: absolute;
   }

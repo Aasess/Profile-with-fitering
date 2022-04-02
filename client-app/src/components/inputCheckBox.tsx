@@ -2,7 +2,7 @@ import React from "react";
 
 const InputCheckBox = (props: any) => {
   const { handleChange, options, values, name } = props;
-  // console.log(values, options);
+
   return (
     <div className="options-checkbox">
       <p className="text-bold">By Signal</p>
@@ -14,7 +14,7 @@ const InputCheckBox = (props: any) => {
           });
 
           return (
-            <div key={index}>
+            <div key={index} className="input-select">
               <input
                 type="checkbox"
                 value={option.value}

@@ -9,7 +9,7 @@ const InputRadio = (props: any) => {
       <div>
         {options.map((option: any, index: number) => {
           return (
-            <div key={index}>
+            <div key={index} className="input-select">
               <input
                 type="radio"
                 value={option.value}

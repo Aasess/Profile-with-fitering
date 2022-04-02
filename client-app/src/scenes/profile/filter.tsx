@@ -17,9 +17,6 @@ const Filter = (props: any) => {
     handleChangeSelect,
   } = props;
 
-  // React.useEffect(() => {
-  //   console.log(state);
-  // }, [state]);
   return (
     <div className="profile-filter">
       <p className="text-bold">Filter</p>

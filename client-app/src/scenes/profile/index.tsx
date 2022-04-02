@@ -118,7 +118,7 @@ const Profile: FC = () => {
           handleChange={handleChange}
           handleChangeSelect={handleChangeSelect}
         />
-        {profileData.length === 0 ? (
+        {!isLoading && profileData.length === 0 ? (
           <NoDataFound />
         ) : (
           <ProfileDetail data={profileData} />
