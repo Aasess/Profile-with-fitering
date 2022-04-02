@@ -14,7 +14,7 @@ import { onFilter } from "helpers/filter";
 import { sortObj } from "helpers/sortObj";
 
 //INTERFACE
-import { rootStateProps } from "ts";
+import { rootStateProps, ProfileState } from "ts";
 
 const statusOptions = [
   { label: "Active", value: "Active" },
@@ -39,7 +39,7 @@ const sourceOptions = [
 const Profile: FC = () => {
   const dispatch: Function = useDispatch();
 
-  const [state, setState] = useState<any>({
+  const [state, setState] = useState<ProfileState>({
     search: "",
     status: "All",
     signal: ["Solid", "Good", "Ok"], //since signal contains multiple values
@@ -53,7 +53,7 @@ const Profile: FC = () => {
   );
 
   const handleChange = (e: any) => {
-    let newState = { ...state };
+    let newState: any = { ...state };
     //signal is a checkbox that contains multiple value
     if (e.target.name === "signal") {
       //if already checked then on click remove from the state
@@ -90,8 +90,7 @@ const Profile: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const sortedProfile = [...profiles];
-    const test = sortedProfile.map((profile: any) => {
+    const sortedProfile = profiles.map((profile: any) => {
       const sortedarr = profile.photos.sort(sortObj);
       return { ...profile, photos: [...sortedarr] };
     });
