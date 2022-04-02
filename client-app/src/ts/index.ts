@@ -3,3 +3,4 @@ export * from "./interfaces/action";
 export * from "./interfaces/reducer";
 export * from "./propsInterfaces";
 export * from "./commonInterfaces";
+export * from "./enumInterfaces";

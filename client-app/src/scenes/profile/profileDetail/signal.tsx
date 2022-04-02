@@ -12,7 +12,7 @@ import { ISignalProps } from "ts";
 
 const Signal: React.FC<ISignalProps> = (props: ISignalProps) => {
   const { data } = props;
-  const signalName = SignalValue[data];
+  const signalName: string = SignalValue[data];
 
   return (
     <div
